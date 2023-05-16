@@ -1,0 +1,12 @@
+{
+    "type": "service_account",
+    "project_id": "aukcija-2023",
+    "private_key_id": "8351d2b2f1b95e21545e98b95d256e383b28072c",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDIkrfBn0FASFpH\noBRVYy+F60V0TG4b4esDYyp0vi9y0NyWMQYDCg5VikICuuqdakIE+j5Wh6ZcDX0K\nW44nbPXh9doO5f2Ahbrkw8O3pel7JGpbIHfmy4ORdn6VuaKs8UgOGabLojHbIKDx\nehKiKSl6Go6tTI07C+veUWjGzkT6TqaaZShyknsUF0tCJn/jDybQVpBrUXrENQmW\nc7TEAZZPtvRjYNV6VStlI9Pmv1fsMDYQYSHxxwtUzGDG3pqqh1r+APfbSWKtz7Jz\n5ZPFf0vqZbARuARTdLzHtBy/hb3Nj6HtI/hKeZvVrZNp/a9/8Am+zvzMh83K75BK\nBedHiLFlAgMBAAECggEAZA79aLQ/4we1MgIj4q0GajKChZATZgmAKkJwTakLFqYn\nRS3Tp/R+TiIY6C/DFyCJKt6D9rrZPRbliCNAeV6cE0uIquIFYvZT1AftPVKhdXMn\nM6qw5gwk6I5Ke/sNsmTz40Tctr2FTaGraIvTe944+NcC0mVcF1bNJi1KrdL9CjkM\nPGkgbd1YOeWwKEYOwmGvTWSCbuB4rkmdlVcVAsRSLZxXELSRq3zyZg8QVoS847pH\npMO03UaV3R54tJx9zzJB0UkVSm9fsLecG/8agdO9mma/RkOOWTYqSsjAKvbrA5ei\nhuGXCHh4p0cQB4vBbrNXdFAqy81UXVRX3cTMLecSCQKBgQDlu0jbYwfW5x5LYtLT\nlQSjTuzZpwLZlh4T9vnLZZNT4qfJuMJInLBoLmllHTXi8if85HMOgCI5t0fUGGaH\ns5lgKcYgbW8cdFFRe6alOQuVLQNorjuXZnHO7uNeFtIaYZHjuObLrHqRkdg616tC\nWLRT5ujkFK2UmBvgUEob4iM4XwKBgQDfgeew91EWuLX1AR7HqPoytIumvEQsBNaE\noD0FdvnJMxyhGP8X7ezxK0jkWlcFAF2LwZXlNPLUb71p6DMOOM/vbo5CgLfaEslm\nsFbvaxfu0YU4PLRYB2UnoFH/er7l+XI5TmAM85GAsMzpFKYzoRCYm7ALQCDBpGPs\n+MXpWU/8uwKBgQCY0t7jutxDNNptUd9oCzDbpqxfGgAGWRvHMjv396lrW1M9GSB9\nh2a+12kbb7QiNe8uB5cWpVyfQnKRAG5shahZVVDMz5/jsOlLqFMyhGFVKm2jHIzd\n6bN58mbkd4/rJs8TSzSVdzbOUdQjSMdPyoyjZ++zkqHqQMoCjcbPB79gRwJ/ZGb2\nrYhr5MkU8/qM2SQPQLfaBAyOkzeZJfrVbp8Dll5fff68mQNIbQ4EsI/kh1qiqyVL\nMKuYadXIQMsOJFVhEy2WukkYTd4imv6cDvEMzztPnPOoD+NCjYp3S0zYdHaZ2SRc\nAXVo52aEpi+geZDg460MaAFmtZYjTVBzl1+HjwKBgQDSc9da7/0robu6i4kQ4x1L\nrF81CEAQ5XlwTCF1E+WzZ2mZFcbDP/B/Isg6vcReo1A89DC7thf0A2v2ehXbg8C9\nO8g4g6rmP2TDP7vAXNWsM3xJepkPdoViWmpuAM920yzo6bRnFVCYlJLS3jQRwCPk\nx6WG2ctpW22KKess4AtZnA==\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-7xct1@aukcija-2023.iam.gserviceaccount.com",
+    "client_id": "109691719656952034062",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-7xct1%40aukcija-2023.iam.gserviceaccount.com"
+}  

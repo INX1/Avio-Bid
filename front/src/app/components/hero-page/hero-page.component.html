@@ -1,0 +1,24 @@
+<app-header></app-header>
+<app-card-info></app-card-info>
+
+<app-auction-confirm *ngIf="log"></app-auction-confirm>
+<div class="hero-container" *ngIf="!log">
+    <div class="img">
+        <div class="img__box">
+            <img src="../../../assets/hero_2.PNG" class="img__second">
+            <div class="menu">
+                <form class="menu--form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <mat-form-field class="menu--email" appearance="outline">
+                        <mat-label for="email">Email</mat-label>
+                        <input formControlName="email" type="email" matInput>
+                    </mat-form-field>
+                    <mat-form-field class="menu--password" appearance="outline">
+                        <mat-label>Full name</mat-label>
+                        <input formControlName="fullname" matInput>
+                    </mat-form-field>
+                    <button class="menu--submit" type="submit" mat-stroked-button color="primary" style="margin-bottom: 4rem;">Complete Purchase</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

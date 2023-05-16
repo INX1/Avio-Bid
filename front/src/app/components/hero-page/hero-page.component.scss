@@ -1,0 +1,78 @@
+// main color of website
+$color-blue:#006272; 
+
+.hero-container {
+    padding: 2rem 8rem 0 8rem;
+}
+.img {
+    &__box {
+        margin: 0 auto;
+        width: max-content;
+    }
+}
+.menu{
+    margin: 0 auto;
+    width: 45rem;
+    position: relative;
+    &--form{
+        position: absolute;
+        left: 22%;
+        display: grid;
+        grid-template-columns: 1fr;
+        width:90%;
+        margin: 0 auto;
+    }
+    &--submit{
+        margin-top:15px;
+        background-color: $color-blue;
+        color:#fff;
+        font-weight: bold;
+        font-size: medium;
+    }  
+}
+// Media query login form for accompanying stupid image
+@media only screen and (max-width: 47.5em){
+    .hero-container {
+        padding: 2rem 0 0 0 ;
+    }
+}
+@media only screen and (max-width: 42.75em) {
+    .img {
+        &__box {
+            margin-left: -4rem;
+            max-width: 120%;
+        }
+        &__second {
+            width: 100%;
+        }
+    }
+    .menu {
+        &--form {left: 15%;max-width: 70%}
+    }
+}
+@media only screen and (max-width: 31.25em) {
+    .menu {
+        &--form {left: 30%;max-width: 65%}
+    }
+}
+@media only screen and (max-width: 25.875em) {
+    .menu {
+        &--form {left: 30%;max-width: 60%}
+    }
+}
+@media only screen and (max-width: 23.4375em) {
+    .menu {
+        &--form {left: 30%;max-width: 54%}
+    }
+}
+@media only screen and (max-width: 22.5em) {
+    .menu {
+        &--form {left: 30%;max-width: 50%}
+    }
+}
+@media only screen and (max-width: 20em) {
+    .menu {
+        &--form {left: 26%;max-width: 45%}
+    }
+}
+

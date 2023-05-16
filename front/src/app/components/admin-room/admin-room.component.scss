@@ -1,0 +1,179 @@
+// Variables
+$breakpoint-color: #eee;
+$ul-color: rgb(0, 95, 204);
+$text-color: rgb(56, 65, 77);
+$text-color-2: rgb(247, 55, 55);
+$mat-btn-color: rgb(156, 60, 156);
+
+// Animations
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 1rem 4rem rgba(0,0,0,.25);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+}
+
+// Main deo
+.active{
+    margin: 100px 0px 50px 0px;
+    text-align: center;
+    color: $text-color-2;
+    &__head {
+        display: inline-block;
+        animation: pulse 1s infinite;
+        background-color: transparent;
+    }
+}
+
+
+// main color of website
+$color-blue:#006272; 
+
+// Hack
+.hack {
+    content: "";
+    height: .2rem;
+    width: 100%;
+    background-color: #eee;
+    margin-bottom: 4rem;
+}
+
+// Header content
+header{
+    width:90%;
+    height: 60px;
+    margin: 0 auto;
+}
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    transition: all .2s;
+    
+    &__logo{
+        width:150px;
+        height: 40px;
+        background-image: url("../header/img/logo.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: '';
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &__menu{
+        &--btnLogin{
+            border-radius: 15px;
+            font-size: medium;
+        }
+    }
+}
+
+// Main deo
+
+.conteiner{
+    display: grid;
+    grid-template-columns: 150px 1fr 150px;
+    margin: 0 0 30px 0;
+    @media only screen and (max-width: 58.125em){
+        grid-template-columns: 0;
+        margin: 0 auto;
+    }
+    @media only screen and (max-width: 39.4375em){
+        
+    }
+
+}
+.room{
+    grid-column: 2/3;
+    border: 1px solid $breakpoint-color;
+    display: grid;
+    line-height: 0px;
+    grid-template-columns: 50px 1fr 1fr 1fr 1fr;
+    border-bottom: 1px solid #7FDBFF;
+    box-shadow: 1px 1px #33505c;
+    text-align: center;
+    margin-top: 10px;
+    justify-content: center;
+    align-content: center;
+    border-radius: .5rem;
+    height: 10rem;
+    @media only screen and (max-width: 33.125em) {
+        grid-template-columns: 0;
+        display:block;
+        width:80%;
+        margin: 0 auto;
+        margin-bottom:0.3rem;
+        border-radius:20px;
+        height: auto;
+        #priceMargin{
+            margin-bottom:3.5rem; //id od trenutne cene 
+        }
+        p,h1,h2,h3,h4,h5,h6{
+            font-size:2.5rem;
+        }
+
+    }
+    @media only screen and (max-width: 73.125em) {
+        &_btn {
+            &--m {
+                margin-top: .4rem;
+                margin-left: 0rem;
+            }
+        }
+    }
+
+    &_class{
+        grid-column: 2/3;
+        justify-self: center;
+        align-self: center;
+        @media only screen and (max-width: 33.125em){
+            margin-top:2.2rem;
+            margin-bottom:3.5rem;
+        }
+    }
+    &_price{
+        grid-column: 3/4;
+        justify-self: center;
+        align-self: center;
+        h3{
+            color: $ul-color;
+        }
+        @media only screen and (max-width: 33.125em){
+            margin-bottom:3.5rem;
+            &--roomPrice{
+                margin-bottom: 100px;
+            }
+    }
+    }
+    &_time{
+        grid-column: 4/5;
+        justify-self: center;
+        align-self: center;
+        p{
+            color: #FF4136;
+            font-size: 90%;
+        }
+        @media only screen and (max-width: 33.125em){
+            font-size:3.1rem;
+            margin-bottom:3rem;
+            margin-top:3rem;
+        }
+    }
+
+    &_join{
+        grid-column: 5/6;
+        justify-self: center;
+        align-self: center;
+    }
+
+}

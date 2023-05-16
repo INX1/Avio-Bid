@@ -1,0 +1,136 @@
+// Hack
+$box-shadow: 0 1rem 3rem rgba(0,0,0,.2);
+
+// Navbar
+header{
+    width:90%;
+    height: 60px;
+    margin: 0 auto;
+}
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    transition: all .2s;
+    
+    &__logo{
+        width:150px;
+        height: 40px;
+        background-image: url("../../header/img/logo.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        content: '';
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &__menu{
+        &--btnLogin{
+            border-radius: 15px;
+            font-size: medium;
+        }
+    }
+}
+// Hack
+.hack {
+    content: "";
+    height: .2rem;
+    width: 100%;
+    background-color: #eee;
+    margin-bottom: 4rem;
+}
+
+// Card
+.card-content {
+    font-size: 1.7rem;
+    padding: 20px;
+    max-width: 95%;
+    width: 114rem;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 50px 200px repeat(2,1fr);
+    column-gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $box-shadow;
+    border-radius: .5rem;
+    @media only screen and (max-width: 80rem) {
+        .hack__1 {border: none; width: .1rem;}
+    }
+    
+    @media only screen and (max-width: 50.31em) {
+        font-size: 90%;
+        column-gap: 1rem;
+        .flight_time {&-l {margin-right: auto;}}
+        
+    }
+    @media only screen and (max-width: 40.625em) {
+        text-align:center;
+        column-gap: .3rem;
+        grid-template-columns: 50px 100px repeat(2,1fr);
+        margin: 1rem auto;
+    }
+    @media only screen and (max-width: 22.5em) {
+        text-align: center;
+        column-gap: .3rem;
+        grid-template-columns: 35px repeat(3,min-content);
+        margin: 0 auto;
+        padding: 0;
+        
+    }
+}
+// Information
+.icon {
+    grid-column: 1 / 2;
+    &__image{
+        width: 100%;
+    }
+}
+.flight_info {
+    grid-column: 2 / 3; 
+    justify-self: center; 
+    p {
+        font-size: 20px;
+    }
+}
+// Timing
+.flight_time {
+    grid-column: 3 / 4;
+    font-size: 1.7rem;
+    display: flex;
+    padding-top: 60px;
+    
+    &-l {
+        width: 50px;
+        margin-right: auto;
+        @media only screen and (max-width: 40.625em) {
+        margin-right: 2rem;
+    }
+}
+    &-r {
+        width: 50px;
+        @media only screen and (max-width: 40.625em) {
+            margin-right: 2rem;
+        }
+    }
+    }
+
+// Number card
+.flight_btn {
+    grid-column: 4 / -1;
+    justify-self: center;
+    &--btnClose{
+        margin-left:1.5rem;
+    }
+}
+.hack__1{
+    content: "";
+    width: 37.1rem;
+    height: 4.5rem;
+    border-top: .2rem dashed black;
+    margin: .6rem .5rem 0 .5rem;
+}
+
+
+

@@ -1,0 +1,40 @@
+<app-header></app-header>
+<app-card-info id="goto"></app-card-info>
+<div class="active">
+    <h1 class="active__head" style="font-size: 3rem;">Active Rooms ({{ activeRooms }})</h1>
+</div>
+
+<div class="spinerConteiner">
+    <div class="spinerConteiner_spiner">
+        <mat-spinner *ngIf="show_Spiner"></mat-spinner>
+    </div>
+</div>
+
+<div class="room_room" *ngIf="show_Room && leaveAuction == false">
+    <app-rooms></app-rooms>
+</div>
+
+<div class="conteiner" *ngIf="flight">
+    <div class="room" *ngFor="let room of rooms; let i = index">
+        <div class="room_class">
+            <h4>Business Class</h4>
+            <p><strong>Room no. {{ i }}</strong></p>
+        </div>
+        <div class="room_price">
+            <h3>Current Price</h3>
+            <p id="priceMargin"><strong>$ {{ room.currentBid }}</strong></p>
+        </div>
+        <div class="room_time">
+            <h4 class="room__time--header">End date and Time</h4>
+            <!-- Ovde nesto uradi za text ne mogu reasponsive -->
+            <p><strong>{{room.time._seconds * 1000 | date:'dd/MM - hh:mmaaa'}}</strong></p> 
+        </div>
+        <div class="room_join">
+            <button mat-flat-button color="accent" (click)="onShowRoom(i)">Join</button>
+        </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>
+

@@ -1,0 +1,342 @@
+// Variables
+$breakpoint-color: #eee;
+$ul-color: rgb(0, 95, 204);
+$text-color: rgb(56, 65, 77);
+$text-color-dark: rgb(37, 43, 51);
+$text-color-2: rgb(247, 55, 55);
+$mat-btn-color: rgb(156, 60, 156);
+$box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+// Mixins
+@mixin breakPointBefore {
+  &::before {
+    content: "";
+    display: block;
+    height: 0.1rem;
+    background-color: $breakpoint-color;
+  }
+}
+@mixin breakPointAfter {
+  &::after {
+    content: "";
+    display: block;
+    height: 0.1rem;
+    background-color: $breakpoint-color;
+  }
+}
+// Extends
+%leftSide-padding {
+  padding: 1rem 1.5rem;
+}
+// Animations
+@-webkit-keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+
+// Default Settings room
+
+.room {
+  max-width: 114rem; // 1140px
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  color: $text-color;
+  box-shadow: $box-shadow;
+  border-radius: 0.5rem;
+  // Display <1000px
+  @media only screen and (max-width: 62.5em) {
+    
+    grid-template-columns: repeat(2, 50%);
+    .header {
+      grid-row: 1 / 2;
+      grid-column: 1 / -1;
+      &__h1 {
+        &--m {
+          margin-right: auto;
+          margin-left: 5rem;
+        }
+      }
+    }
+    .content {
+      grid-row: 2 / 3;
+      grid-column: 1 / -1;
+    }
+    .time {
+      grid-row: 3 / 4;
+      grid-column: 1 / 2;
+    }
+    .bid-manual {
+      grid-row: 3 / 4;
+      grid-column: 2 / -1;
+      align-items: center;
+      justify-self: center;
+      margin-bottom: 2rem;
+    }
+    .bid-automatic {
+      grid-row: 4 / 5;
+      grid-column: 2 / -1;
+      align-items: center;
+      justify-self: center;
+    }
+  }
+  // Display <700px
+  @media only screen and (max-width: 43.75em) {
+    .time {
+      grid-row: 4 / 5;
+      grid-column: 1 / -1;
+    }
+    .bid-manual {
+      grid-row: 3 / 4;
+      grid-column: 2 / -1;
+    }
+    .bid-automatic {
+      grid-row: 3 / 4;
+      grid-column: 1 / 2;
+    }
+    .header {
+      &__h1 {
+        font-size: 98%;
+        font-weight: 500;
+        &--m {
+          margin-left: 1rem;
+        }
+      }
+      &__btn {
+        font-size: 90%
+      }
+    }
+  }
+  // Display <620px
+  @media only screen and (max-width: 38.875em) {
+    margin: 0rem 0rem 4rem 0rem;
+    .content {
+      grid-template-rows: 50% 50%;
+      grid-template-columns: repeat(2, 50%);
+    }
+    .leftSide {
+      grid-row: 1 / 2;
+      grid-column: 1 / -1;
+      align-items: center;
+      padding: 2rem 0;
+      width: 97.5%;
+      margin: 0 auto;
+      background-image: linear-gradient(to right, #f3e5f5, #eee0f0);
+      &__user {
+        &::after {
+          display: none;
+        }
+      }
+      &__paragraf {
+        font-size: 98%;
+        font-weight: 600;
+        &--m {
+          display: none;
+        }
+      }
+      &__list {
+        display: none;
+      }
+    }
+    .time {
+      text-align: center;
+    }
+    .rightSide {
+      grid-row: 2 / -1;
+      grid-column: 1 / -1;
+      &__content {
+        width: 18rem;
+      }
+    }
+  }
+  @media only screen and (max-width: 24.5625em) {
+    margin: 2rem 0;
+    .time {
+      grid-row: 5 / 6;
+      grid-column: 1 / -1;
+      text-align: center;
+      border-top: 0.1rem solid $breakpoint-color;
+    }
+    .bid-manual {
+      grid-row: 3 / 4;
+      grid-column: 1 / -1;
+      text-align: center;
+    }
+    .bid-automatic {
+      grid-row: 4 / 5;
+      grid-column: 1 / -1;
+      text-align: center;
+      border-top: 0.1rem solid rgb(255, 228, 228);
+    }
+    .rightSide {
+      &__content {
+        width: 10rem;
+      }
+    }
+  }
+}
+
+// Header content
+.header {
+  grid-column: 1 / -1;
+  padding: 1.7rem 1rem;
+  display: flex;
+  align-items: center;
+  color: $text-color;
+  &__h1 {
+    margin: 0;
+    letter-spacing: 0.2rem;
+    &--m {
+      margin-right: auto;
+      margin-left: 22.5rem;
+    }
+  }
+
+  &__btn {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.2rem 1.5rem;
+    font-size: 1.6rem;
+    &--form {
+      padding: 0.2rem 2rem;
+      margin-left: 0.3rem;
+      margin-bottom: 1rem;
+      &:hover {
+        -webkit-animation: pulse 1s infinite;
+                animation: pulse 1s infinite;
+      }
+    }
+  }
+  @include breakPointAfter;
+}
+
+// Main content
+.content {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  border-top: 0.1rem solid $breakpoint-color;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.007), rgba(0, 0, 0, 0));
+}
+
+.leftSide {
+  grid-column: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  &__user {
+    @include breakPointAfter;
+  }
+  &__paragraf {
+    font-size: 1.8rem;
+    font-weight: 300;
+
+    &--m {
+      margin-bottom: 1rem;
+    }
+  }
+  &__list {
+    @include breakPointAfter;
+    list-style: none;
+    padding: 1.5rem 0rem;
+    font-size: 1.7rem;
+    color: rgb(0, 95, 204);
+    &-item {
+      padding: 0 0 0 1rem;
+      margin-top: 1.5rem;
+
+      &:last-child {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}
+
+.rightSide {
+  grid-column: 2 / -1;
+  @extend %leftSide-padding;
+  width: 96%;
+  margin: 1rem auto;
+  border-bottom: 0.1rem solid $breakpoint-color;
+  padding: 2rem 4rem;
+  background-color: rgb(248, 240, 240);
+  color: $mat-btn-color;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border-radius: 1rem;
+  &__content {
+    padding: 1rem 1.5rem;
+    background-color: rgb(243, 243, 243);
+    border-radius: 1rem;
+    box-shadow: $box-shadow;
+    width: 30rem;
+  }
+}
+
+// Timer
+.time {
+  @extend %leftSide-padding;
+  grid-column: 1 / 2;
+  justify-self: left;
+  &__timeLeft {
+    text-align: left;
+    font-size: 2rem;
+    color: $text-color-2;
+    letter-spacing: 0.3rem;
+  }
+
+  @media(max-width: 400px){
+
+    justify-self: center;
+  
+    &__timeLeft {
+      text-align: center;
+    }
+  }
+}
+// Bid-manual
+.bid-manual {
+  grid-column: 3 / 4;
+  align-self: center;
+}
+.mat-manual {
+  background-color: $mat-btn-color;
+  color: #fff;
+}
+// Bid-automatic
+.bid-automatic {
+  grid-column: 4 / -1;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+}
+.mat-form-field {
+  display: block;
+}

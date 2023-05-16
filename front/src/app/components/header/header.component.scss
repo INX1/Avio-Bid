@@ -1,0 +1,65 @@
+
+// main color of website
+$color-blue:#006272; 
+
+// Hack
+.hack {
+    content: "";
+    height: .2rem;
+    width: 100%;
+    background-color: #eee;
+    margin-bottom: 4rem;
+}
+
+
+header{
+    width:90%;
+    height: 60px;
+    margin: 0 auto;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    transition: all .2s;
+    
+    &__logo{
+        width:150px;
+        height: 40px;
+        background-image: url("./img/logo.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: '';
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    &__menu{
+        &--btnLogin{
+            border-radius: 15px;
+            font-size: medium;
+        }
+        &--form{
+            display: grid;
+            grid-template-columns: 1fr;
+            width:90%;
+            margin: 0 auto;
+        }
+        ::ng-deep &--matMenu{
+            width:400px;
+        }
+        &--submit{
+            margin-top:15px;
+            background-color: $color-blue;
+            color:#fff !important;  //tekst je bio plave boje, nije se video lepo, nije citalo ovu vrednost
+            font-weight: bold;
+            font-size: medium;
+        }
+        
+    }
+    
+}

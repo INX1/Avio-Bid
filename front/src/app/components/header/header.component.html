@@ -1,0 +1,26 @@
+<header>
+  <div class="navigation">
+    <div class="navigation__logo"></div>
+    <div class="navigation__menu">
+      <button class="navigation__menu--btnLogin" [matMenuTriggerFor]="logInMenu" mat-stroked-button
+        color="primary">Login</button>
+      <mat-menu class="navigation__menu--matMenu" #logInMenu xPosition="before">
+        <form class="navigation__menu--form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <mat-form-field class="navigation__menu--email" appearance="outline" (click)="$event.stopPropagation();">
+            <mat-label for="email">Email</mat-label>
+            <input formControlName="email" type="email" matInput name="email">
+          </mat-form-field>
+          <mat-form-field class="navigation__menu--password" appearance="outline" (click)="$event.stopPropagation();">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" type="password" matInput name="password">
+          </mat-form-field>
+          <small matTooltip="Check your email for password" (click)="$event.stopPropagation();"><a href="#">What is my
+              password?</a></small>
+          <button class="navigation__menu--submit" type="submit" mat-stroked-button color="primary" 
+            [disabled]="!loginForm.valid">Submit</button>
+        </form>
+      </mat-menu>
+    </div>
+  </div>
+</header>
+<div class="hack"></div>

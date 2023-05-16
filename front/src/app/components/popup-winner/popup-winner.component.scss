@@ -1,0 +1,85 @@
+//main webite color
+$color-blue:#006272; 
+//plain black color
+$color-black: #000;
+
+.background{
+    //Grey background over entire display
+    width:100%;
+    height: 100%;
+    position:fixed;
+    top:0;
+    background-color: rgba($color-black, .5);
+    z-index: 9999;
+    transition: all .3s;
+    @supports (-webkit-backdrop-filter: blur()) or (backdrop-filter: blur()) {
+        -webkit-backdrop-filter: blur(.1rem);
+        backdrop-filter: blur(.1rem);
+        background-color: rgba($color-black, .7);
+    }
+}
+.body{
+    position: relative;
+    top:20%;
+    width: 30%;
+    left: calc(50% - 15%);
+    height: 250px;
+    border-radius:30px;
+    background-color: white;
+    &__button{
+        background-color: $color-blue;
+        border-radius: 15px;
+        position:relative;
+        width:100px;
+        height: 50px;
+        left:calc(50% - 50px);
+        margin-top:20px;
+    }
+    &__flight{
+        border:1px solid #000;
+        width:80%;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 10px;
+        &--card{
+            display:grid;
+            grid-template-columns: 40% 60%;
+            grid-template-rows: 80px;
+            text-align: center;
+        }
+        &--card img{
+            width:100px;
+            height: 70px;
+            padding-top:10px;
+        }
+        &--card p{
+            padding-top:10px;
+            width: 90%;
+        }
+        
+    }
+}
+h1{
+    text-align: center;
+    padding-top:20px;
+    font-weight: bold;
+}
+@media(max-width:768px){
+
+    .body{
+        
+        height: auto;
+        width:50%;
+        left: calc(50% - 25%);
+        &__button{
+            position:relative;
+            left:calc(50% - 50px);
+            margin-bottom:20px;
+        }
+        &__flight{
+            &--card{
+                display: block;
+            }
+        }
+    }
+}

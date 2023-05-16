@@ -1,0 +1,42 @@
+$color-black: #000;
+// Izmenio sam popup sa malo cool efektom, nadam se da nije problem :) - Mare
+.auctionConfirm{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-black, .5);
+    z-index: 9999;
+    transition: all .3s;
+    @supports (-webkit-backdrop-filter: blur()) or (backdrop-filter: blur()) {
+        -webkit-backdrop-filter: blur(.1rem);
+        backdrop-filter: blur(.1rem);
+        background-color: rgba($color-black, .7);
+    }
+    &__body{
+        background-color:#fff;
+        width:400px;
+        height: auto;
+        text-align: center;
+        padding:30px;
+        border-radius: 20px;
+        position: relative;
+        top:30%;
+        left: calc(50% - 200px);
+        &--thanks{
+            font-size: 1.7em;
+            margin-bottom:25px;
+        }
+        &--question{
+            font-size: 1.2em;
+        }
+        &--buttons{
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 20px;
+        }
+        
+    }
+    
+}

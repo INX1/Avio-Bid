@@ -1,0 +1,33 @@
+<header>
+  <div class="navigation">
+    <div class="navigation__logo"></div>
+    <div class="navigation__menu">
+      <button class="navigation__menu--btnLogin" mat-stroked-button
+        color="primary" [routerLink]="['/']">Log Out</button>
+    </div>
+  </div>
+</header>
+<div class="hack"></div>
+
+<app-card-info id="goto"></app-card-info>
+
+
+<div class="conteiner">
+    <div class="room" *ngFor="let room of rooms; let i = index">
+        <div class="room_class">
+            <h4>Business Class</h4>
+            <p><strong>Room no. {{ i }}</strong></p>
+        </div>
+        <div class="room_price">
+            <h3>Current Price</h3>
+            <p><strong>$ {{ room.currentBid }}</strong></p>
+        </div>
+        <div class="room_time">
+            <h4>End date and Time</h4>
+            <!-- Ovde nesto uradi za text ne mogu reasponsive -->
+            <p><strong>{{ room.time._seconds * 1000 | date:'dd/MM - hh:mmaaa' }}</strong></p> 
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

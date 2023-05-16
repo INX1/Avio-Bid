@@ -1,0 +1,75 @@
+$footer-color:#F9F9F9;
+$footer-efekat: hsla(0, 0%, 93%, 0.959);
+footer{
+    background-color: $footer-color;
+    width:100%;
+    min-width: 100%;
+    height: auto;
+    position: absolute;
+    bottom:0;
+    margin-top: 10rem;
+    border-top:1px solid $footer-color; // Morao sam da menjam border boju, lepse kad je ista
+    //Zasto ima prostora ispod futera i dna strane??   -- Reseno ! - Mare
+}
+.footer-top{
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:70%;
+    margin: 0 auto;
+    padding-top:3%;
+    background-color: $footer-color;
+    p {margin: 0}
+    &-efekat:hover {
+        background-color: $footer-efekat;
+        cursor: pointer;
+        padding: 1rem;
+        transition: all .2s;
+    }
+}
+.footer-limit{
+    width:90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 40% auto 30%;
+    padding-top:2%;
+    padding-bottom:2%;
+}
+.icons > img{
+    width:120px;
+    height: auto;
+    object-fit: contain;
+}
+.icons{
+    display:flex;
+    justify-content: flex-end;
+}
+#iconTwo{
+    width:70px;
+    margin-left: 15px;
+}
+.copyright{
+    position: relative;
+    top:50%;
+    overflow: hidden;
+}
+
+@media(max-width:768px){
+    .footer-top{
+        display: block;
+        height: auto;
+    }
+    .footer-top > div > p{
+        padding:10px 0px 10px 0px;
+        font-size:1.2em;
+    }
+    .footer-limit{
+        display:block;
+        font-size:1.2em;
+        text-align: center;
+    }
+    .icons{
+        justify-content: space-around;
+    }
+}
