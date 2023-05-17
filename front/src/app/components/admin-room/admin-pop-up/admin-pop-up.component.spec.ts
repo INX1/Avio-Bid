@@ -6,6 +6,9 @@ import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 import { AdminPopUpComponent } from './admin-pop-up.component';
 import { AuctionService } from 'src/app/services/auction.service';
+import { AppModule } from 'src/app/app.module';
+import { HttpClientModule } from '@angular/common/http';
+import { APP_BASE_HREF } from '@angular/common';
 
 describe('AdminPopUpComponent', () => {
   let component: AdminPopUpComponent;
@@ -14,17 +17,24 @@ describe('AdminPopUpComponent', () => {
   let mockAuctionService: jasmine.SpyObj<AuctionService>;
 
   beforeEach(async () => {
-    const mockAuctionServiceSpy = jasmine.createSpyObj('AuctionService', ['startAuction']);
+    const mockAuctionServiceSpy = jasmine.createSpyObj('AuctionService', [
+      'startAuction',
+    ]);
     const mockDialogRefSpy = jasmine.createSpyObj('MatDialogRef', ['close']);
 
     await TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, RouterTestingModule],
+      imports: [ReactiveFormsModule, RouterTestingModule, AppModule],
       declarations: [AdminPopUpComponent],
       providers: [
+        HttpClientModule,
+        { provide: APP_BASE_HREF, useValue: '/' },
         { provide: MatDialogRef, useValue: mockDialogRefSpy },
         { provide: MAT_DIALOG_DATA, useValue: {} },
         { provide: AuctionService, useValue: mockAuctionServiceSpy },
-        { provide: ActivatedRoute, useValue: { params: of({ flightID: 'testFlightID' }) } },
+        {
+          provide: ActivatedRoute,
+          useValue: { params: of({ flightID: 'testFlightID' }) },
+        },
       ],
     }).compileComponents();
   });
@@ -32,8 +42,12 @@ describe('AdminPopUpComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(AdminPopUpComponent);
     component = fixture.componentInstance;
-    mockDialogRef = TestBed.inject(MatDialogRef) as jasmine.SpyObj<MatDialogRef<AdminPopUpComponent>>;
-    mockAuctionService = TestBed.inject(AuctionService) as jasmine.SpyObj<AuctionService>;
+    mockDialogRef = TestBed.inject(MatDialogRef) as jasmine.SpyObj<
+      MatDialogRef<AdminPopUpComponent>
+    >;
+    mockAuctionService = TestBed.inject(
+      AuctionService
+    ) as jasmine.SpyObj<AuctionService>;
   });
 
   it('should create the component', () => {
@@ -55,7 +69,7 @@ describe('AdminPopUpComponent', () => {
 
     it('should set minBid value in AuctionService', () => {
       const mockMinBid = 100;
-      component.bidingForm.get('bidingPrice')?.setValue(mockMinBid);
+      component.bidingForm?.get('bidingPrice')?.setValue(mockMinBid);
 
       component.onBidSubmit();
 
@@ -76,7 +90,10 @@ describe('AdminPopUpComponent', () => {
 
       component.onBidSubmit();
 
-      expect(mockAuctionService.startAuction).toHaveBeenCalledWith(mockFlightID, expectedAuctionParams);
+      expect(mockAuctionService.startAuction).toHaveBeenCalledWith(
+        mockFlightID,
+        expectedAuctionParams
+      );
     });
 
     it('should close the dialog and navigate to "/Admin"', () => {
@@ -87,4 +104,4 @@ describe('AdminPopUpComponent', () => {
     });
   });
 });
-``
+``;

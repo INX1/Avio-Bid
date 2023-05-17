@@ -10,6 +10,9 @@ import { FlightService } from '../../services/flight.service';
 import { UserService } from 'src/app/services/user.service';
 import { of } from 'rxjs';
 import { Flight } from 'src/app/models/flight.model';
+import { HeaderComponent } from '../header/header.component';
+import { CardInfoComponent } from '../card-info/card-info.component';
+import { AppModule } from 'src/app/app.module';
 
 describe('HeroPageComponent', () => {
   let component: HeroPageComponent;
@@ -27,8 +30,8 @@ describe('HeroPageComponent', () => {
     ]);
 
     await TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule],
-      declarations: [HeroPageComponent],
+      imports: [ReactiveFormsModule, AppModule],
+      declarations: [HeroPageComponent, HeaderComponent, CardInfoComponent],
       providers: [
         { provide: FlightService, useValue: mockFlightServiceSpy },
         { provide: UserService, useValue: mockUserServiceSpy },

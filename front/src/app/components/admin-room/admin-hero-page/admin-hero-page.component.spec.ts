@@ -7,6 +7,10 @@ import { AdminHeroPageComponent } from './admin-hero-page.component';
 import { FlightService } from 'src/app/services/flight.service';
 import { AuctionService } from 'src/app/services/auction.service';
 import { AdminPopUpComponent } from '../admin-pop-up/admin-pop-up.component';
+import { FooterComponent } from '../../footer/footer.component';
+import { AppModule } from 'src/app/app.module';
+import { HttpClientModule } from '@angular/common/http';
+import { APP_BASE_HREF } from '@angular/common';
 
 describe('AdminHeroPageComponent', () => {
   let component: AdminHeroPageComponent;
@@ -26,13 +30,16 @@ describe('AdminHeroPageComponent', () => {
     const mockRouterSpy = jasmine.createSpyObj('Router', ['navigate']);
     const mockMatDialogSpy = jasmine.createSpyObj('MatDialog', ['open']);
 
-    await TestBed.configureTestingModule({
-      declarations: [AdminHeroPageComponent],
+    TestBed.configureTestingModule({
+      imports: [AppModule],
+      declarations: [AdminHeroPageComponent, FooterComponent],
       providers: [
+        //{ provide: APP_BASE_HREF, useValue: '/' },
         { provide: FlightService, useValue: mockFlightServiceSpy },
         { provide: AuctionService, useValue: mockAuctionServiceSpy },
-        { provide: Router, useValue: mockRouterSpy },
+        //{ provide: Router, useValue: mockRouterSpy },
         { provide: MatDialog, useValue: mockMatDialogSpy },
+        HttpClientModule,
       ],
     }).compileComponents();
   });

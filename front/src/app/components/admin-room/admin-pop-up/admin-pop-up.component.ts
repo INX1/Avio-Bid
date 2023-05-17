@@ -25,7 +25,7 @@ export class AdminPopUpComponent implements OnInit {
     });
   }
   onBidSubmit() {
-    this._auctionService.minBid = this.bidingForm.get('bidingPrice').value;
+    this._auctionService.minBid = this.bidingForm.get('bidingPrice')?.value;
 
     this._auctionService
       .startAuction(this.data['flightID'], {

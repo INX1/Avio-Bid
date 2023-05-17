@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AuctionConfirmComponent } from './auction-confirm.component';
+import { AppModule } from 'src/app/app.module';
 
 describe('AuctionConfirmComponent', () => {
   let component: AuctionConfirmComponent;
@@ -8,9 +9,10 @@ describe('AuctionConfirmComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AuctionConfirmComponent ]
-    })
-    .compileComponents();
+      imports: [AppModule],
+
+      declarations: [AuctionConfirmComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

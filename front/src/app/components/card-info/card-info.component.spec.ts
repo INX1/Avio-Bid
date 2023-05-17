@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CardInfoComponent } from './card-info.component';
+import { AppModule } from 'src/app/app.module';
 
 describe('CardInfoComponent', () => {
   let component: CardInfoComponent;
@@ -8,6 +9,7 @@ describe('CardInfoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [AppModule],
       declarations: [ CardInfoComponent ]
     })
     .compileComponents();
