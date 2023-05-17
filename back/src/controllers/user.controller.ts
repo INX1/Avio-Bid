@@ -18,6 +18,9 @@ export const getAllUsers = (async (_request: Request, _response: Response)  => {
             user.email = doc.id;  // userID
             users.push(user);
         });
+        // _response.setHeader("Access-Control-Allow-Origin", "*");
+        // _response.setHeader('Access-Control-Allow-Methods', '*');
+        // _response.setHeader("Access-Control-Allow-Headers", "*");
         _response.send(users);
     } catch (error) {
         _response.status(500).send(error);
@@ -38,10 +41,10 @@ export const getUserById = (async (_request: Request, _response: Response)  => {
 // [HttpPost]
 export const setUser = (async (_request: Request, _response: Response)  => {
     try {
-        const result = await db.collection('users').doc(_request.body.email).set({name: _request.body.name, flightID: _request.body.flightID});
+        const result = await db.collection('users').doc(_request.body.email).set({name: _request.body.name ?? "", flightID: _request.body.flightID ?? ""});
         (result) ? _response.send("The user has been sucessfully added.") : _response.send(undefined);
 
-        sendMailBuyNewCard(_request.body.email, _request.body.name, _request.body.flightID);
+        //sendMailBuyNewCard(_request.body.email, _request.body.name, _request.body.flightID);
     } catch (error) {
         _response.status(500).send(error);
     }

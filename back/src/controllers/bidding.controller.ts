@@ -27,7 +27,7 @@ export const setBid =  (async (request: Request, response: Response) => {
             const res = await db.collection('auctions').doc(request.body.flightID).collection('rooms').doc(request.body.roomID).update({
                 currentBid: request.body.bid
             });
-            (res) ? response.send("The bid has been sucessfully added.") : response.status(400)
+            (res) ? response.status(200).send("The bid has been sucessfully added.") : response.status(400)
         } else response.send(undefined);
     } catch (error) {
         response.status(500).send(error);

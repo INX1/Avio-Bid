@@ -26,6 +26,9 @@ exports.getAllUsers = ((_request, _response) => __awaiter(void 0, void 0, void 0
             user.email = doc.id; // userID
             users.push(user);
         });
+        // _response.setHeader("Access-Control-Allow-Origin", "*");
+        // _response.setHeader('Access-Control-Allow-Methods', '*');
+        // _response.setHeader("Access-Control-Allow-Headers", "*");
         _response.send(users);
     }
     catch (error) {
@@ -45,10 +48,11 @@ exports.getUserById = ((_request, _response) => __awaiter(void 0, void 0, void 0
 }));
 // [HttpPost]
 exports.setUser = ((_request, _response) => __awaiter(void 0, void 0, void 0, function* () {
+    var _a, _b;
     try {
-        const result = yield firebase_1.db.collection('users').doc(_request.body.email).set({ name: _request.body.name, flightID: _request.body.flightID });
+        const result = yield firebase_1.db.collection('users').doc(_request.body.email).set({ name: (_a = _request.body.name) !== null && _a !== void 0 ? _a : "", flightID: (_b = _request.body.flightID) !== null && _b !== void 0 ? _b : "" });
         (result) ? _response.send("The user has been sucessfully added.") : _response.send(undefined);
-        sendMailBuyNewCard(_request.body.email, _request.body.name, _request.body.flightID);
+        //sendMailBuyNewCard(_request.body.email, _request.body.name, _request.body.flightID);
     }
     catch (error) {
         _response.status(500).send(error);

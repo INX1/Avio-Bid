@@ -18,7 +18,7 @@ export class FlightService {
   }
 
   public getRandomFlight(): Observable<any>{
-    return this.http.get('/api/flights/getRandomFlight');
+    return this.http.get('http://localhost:8080/api/flights/getRandomFlight');
   }
   /* Za Admin deo */
   public getFlights(): Observable<any>{
@@ -26,6 +26,6 @@ export class FlightService {
   }
 
   public getOneFlight(flightID: string): Observable<any>{
-    return this.http.get(`/api/flights/${flightID}`);
+    return this.http.get(`http://localhost:8080/api/flights/${flightID}`);
   }
 }

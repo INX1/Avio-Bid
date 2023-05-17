@@ -10,7 +10,7 @@ header{
 .navigation{
     display: flex;
     justify-content: space-between;
-    margin: 20px auto;
+    margin: 8px auto;
     transition: all .2s;
     
     &__logo{
@@ -43,7 +43,7 @@ header{
 
 // Card
 .card-content {
-    font-size: 1.7rem;
+    font-size: 1.2rem;;
     padding: 20px;
     max-width: 95%;
     width: 114rem;
@@ -133,4 +133,7 @@ header{
 }
 
 
-
+.flights-container {
+    overflow: scroll;
+    max-height: 569px;
+}

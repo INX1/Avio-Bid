@@ -2,7 +2,8 @@
 $box-shadow: 0 1rem 3rem rgba(0,0,0,.2);
 // Card
 .card-content {
-    font-size: 1.7rem;
+    padding: 20px;
+    font-size: 1.2rem;;
     max-width: 95%;
     width: 114rem;
     margin: 2rem auto;
@@ -84,5 +85,8 @@ $box-shadow: 0 1rem 3rem rgba(0,0,0,.2);
     margin: 1rem .5rem 0 .5rem;
 }
 
-
+// .flights-container {
+//     overflow: scroll;
+//     max-height: 569px;
+// }
 

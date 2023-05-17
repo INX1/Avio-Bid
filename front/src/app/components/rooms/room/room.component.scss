@@ -254,8 +254,8 @@ $box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
     @include breakPointAfter;
   }
   &__paragraf {
-    font-size: 1.8rem;
-    font-weight: 300;
+    font-size: 1rem;
+    font-weight: 500;
 
     &--m {
       margin-bottom: 1rem;

@@ -34,7 +34,7 @@ exports.setBid = ((request, response) => __awaiter(void 0, void 0, void 0, funct
             const res = yield firebase_1.db.collection('auctions').doc(request.body.flightID).collection('rooms').doc(request.body.roomID).update({
                 currentBid: request.body.bid
             });
-            (res) ? response.send("The bid has been sucessfully added.") : response.status(400);
+            (res) ? response.status(200).send("The bid has been sucessfully added.") : response.status(400);
         }
         else
             response.send(undefined);

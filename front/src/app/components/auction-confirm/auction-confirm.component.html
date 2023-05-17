@@ -9,7 +9,7 @@
     </header>
     <section class="auctionConfirm__body--buttons">
       <button mat-raised-button color="primary" (click)="onYes()">Yes, please</button>
-      <button mat-raised-button color="warn">Not Interested</button>
+      <button mat-raised-button color="warn" (click)="onCancel()">Not Interested</button>
     </section>
     <mat-expansion-panel class="auctionConfirm__body--addedInfo" hideToggle>
       <mat-expansion-panel-header>

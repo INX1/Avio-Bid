@@ -1,29 +1,31 @@
 
-<mat-card class="card-content" *ngIf="flight">
-    <div class="icon">
-        <img class="icon__image" src="assets/plane.svg">
-    </div>
-
-    <div class="flight_info">
-        <p>Economy</p>
-        <h3 style="font-weight: 600;">{{ flight.origin }} to {{ flight.destination }}</h3>
-        <p></p>
-    </div>
-
-    <div class="flight_time">
-        <div class="flight_time-l">
-            <h4>17:00</h4>
-            <div class="gornja"></div>
-        </div> 
-        <div class="hack__1"></div>
-        <div class="flight_time-r">
-            <div class="donja"></div>
-            <h4>4:15</h4>
+<div class="flights-container">
+    <mat-card class="card-content" *ngIf="flight">
+        <div class="icon">
+            <img class="icon__image" src="assets/plane.svg">
         </div>
-    </div>
 
-    <div class="flight_number">
-        <h3 class="flight_number-title" style="text-align: center; font-weight: 600;">EI 104</h3>
-        <p>Operated by Avio Bid</p>
-    </div>
-</mat-card>
+        <div class="flight_info">
+            <p>Economy</p>
+            <h3 style="font-weight: 600;">{{ flight.origin }} to {{ flight.destination }}</h3>
+            <p></p>
+        </div>
+
+        <div class="flight_time">
+            <div class="flight_time-l">
+                <h4>17:00</h4>
+                <div class="gornja"></div>
+            </div> 
+            <div class="hack__1"></div>
+            <div class="flight_time-r">
+                <div class="donja"></div>
+                <h4>4:15</h4>
+            </div>
+        </div>
+
+        <div class="flight_number">
+            <h3 class="flight_number-title" style="text-align: center; font-weight: 600;">EI 104</h3>
+            <p>Operated by Avio Bid</p>
+        </div>
+    </mat-card>
+</div>

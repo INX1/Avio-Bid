@@ -122,7 +122,7 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-function sendMailBuyNewCard(email: string, name: string, flightID: string){
+export function sendMailBuyNewCard(email: string, name: string, flightID: string){
     
     const mailOptions = {
         from: 'Auctions', 

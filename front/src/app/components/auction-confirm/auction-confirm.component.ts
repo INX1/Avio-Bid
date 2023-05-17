@@ -17,4 +17,8 @@ export class AuctionConfirmComponent implements OnInit {
   onYes(){
     this.route.navigate([`auctions/${this._flightService.flight.flightID}/${this._userService.emailUser}`]);
   }
+
+  onCancel() {
+    this.route.navigate([`/`]);
+  }
 }
